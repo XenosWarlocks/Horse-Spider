@@ -1,53 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.action_chains import ActionChains
-# import random
-# import time
-
-
-# def get_google_search_links(query, num_results=10, max_pages=5):
-#     # Initialize WebDriver
-#     driver = webdriver.Chrome()
-
-#     search_url = f"https://www.google.com/search?q={query}&num={num_results}"
-#     driver.get(search_url)
-#     time.sleep(3)  # Wait for the page to load
-
-#     all_links = []
-
-#     for page in range(max_pages):
-#         # Extract links from the current page
-#         links = []
-#         results = driver.find_elements(By.CSS_SELECTOR, 'div.g a')
-#         for result in results:
-#             url = result.get_attribute('href')
-#             if url and "http" in url:
-#                 links.append(url)
-#         all_links.extend(links)
-
-#         # Find the "Next" button and click it if it exists
-#         try:
-#             next_button = driver.find_element(By.ID, 'pnnext')
-#             next_url = next_button.get_attribute('href')
-#             if next_url:
-#                 driver.get(next_url)
-#                 time.sleep(3)  # Wait for the next page to load
-#             else:
-#                 break  # Exit if there is no "Next" button
-#         except Exception as e:
-#             print("No more pages or an error occurred:", e)
-#             break
-
-#     driver.quit()
-#     return all_links
-
-# # Example usage to get links
-# query = "ESG risks in bank investment portfolio"
-# links = get_google_search_links(query, max_pages=5)
-
-# print(links)  # Verify links before passing to Scrapy
-###########################################################
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -112,8 +62,3 @@ def get_google_search_links(query, num_results=10, max_pages=15):
     driver.quit()
     return all_links
 
-# Example usage to get links
-query = "ESG risks in bank investment portfolio"
-links = get_google_search_links(query, max_pages=15)
-
-print(links)  # Verify links before passing to Scrapy
