@@ -4,6 +4,7 @@ Horse Scraper is a Python-based project designed to perform Google searches, ext
 ## Authors
 
 - [@octokatherine](https://www.github.com/octokatherine) really helped me pick the name for this project; otherwise, I wouldn't have started this project.
+- [@XenosWarlocks](https://www.github.com/XenosWarlocks) 
 
 
 ## Features
