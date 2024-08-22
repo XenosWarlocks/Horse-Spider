@@ -8,6 +8,7 @@ def main():
     query = "ESG risks in bank investment portfolio"
     links = get_google_search_links(query)
 
+    # Run scraper with enhanced features
     run_scraper(links)
 
     # Convert CSV to Excel and JSON
