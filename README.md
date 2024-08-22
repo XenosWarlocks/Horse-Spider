@@ -52,19 +52,3 @@ Horse Spider is a Python-based project designed to perform Google searches, extr
    python __main__.py
    ```
 
-### Structure
-Horse-Spider/
-├── backend/
-│   ├── __init__.py
-│   ├── google_search.py       # Handles Google search and link extraction
-│   ├── scraper.py             # Scrapes content from extracted links
-│   └── data_processing.py     # Converts scraped data to CSV, JSON, or Excel
-│   └── database.py            # Handles storing data into the database
-├── database/
-│   └── db_handler.py          # Handles data storage in a database
-├── output/                    # Directory where output files are stored
-│   ├── data.csv
-│   ├── data.json
-│   └── data.xlsx
-└── __main__.py                # Main script to run the entire process
-
