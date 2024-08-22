@@ -1,5 +1,6 @@
-# Horse-Scraping
-Horse Scraper is a Python-based project designed to perform Google searches, extract links from the search results, and scrape the content from those links. The project uses Selenium for simulating human-like interactions to avoid being flagged as a bot. The scraped data can be exported in multiple formats, such as CSV, JSON, and Excel.
+![Logo](assets/logo.png)
+#                                                                                     Horse-Spider
+Horse Spider is a Python-based project designed to perform Google searches, extract links from the search results, and scrape the content from those links. The project uses Selenium for simulating human-like interactions to avoid being flagged as a bot. The scraped data can be exported in multiple formats, such as CSV, JSON, and Excel.
 
 ## Authors
 
