@@ -5,12 +5,21 @@ from contextlib import contextmanager
 
 class DatabaseConfig:
     def __init__(self, db_file='esg_data.db'):
-        self.db_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), db_file)
+        self.db_file = os.path.abspath(db_file)
         self._ensure_database_exists()
 
     def _ensure_database_exists(self):
-        """Ensure the database file exists; if not, create the tables."""
+        """Ensure the database file exists; if not, create the database and tables."""
+        db_dir = os.path.dirname(self.db_file)
+
+        if not os.path.exists(db_dir):
+            os.makedirs(db_dir)  # Create directory if it doesn't exist
+            print(f"Directory '{db_dir}' created.")
+
         if not os.path.exists(self.db_file):
+            # Create an empty database file
+            open(self.db_file, 'w').close()
+            print(f"Database file '{self.db_file}' created.")
             self._create_tables()
 
     def _create_tables(self):
@@ -36,6 +45,7 @@ class DatabaseConfig:
         """Context manager to handle database connections."""
         conn = None
         try:
+            print(f"Attempting to connect to database at: {self.db_file}")  # Debugging line
             conn = sqlite3.connect(self.db_file)
             yield conn
         except Error as e:
@@ -113,7 +123,7 @@ class DatabaseConfig:
             print(f"Error updating data: {e}")
             raise
 
-# Testing the code
+
 # if __name__ == "__main__":
 #     # Example usage
 #     db_config = DatabaseConfig()
