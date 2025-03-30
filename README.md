@@ -52,3 +52,8 @@ Horse Spider is a Python-based project designed to perform Google searches, extr
    python __main__.py
    ```
 
+## WorkFlow
+
+![Diagram](assets/diagram.png)
+
+
